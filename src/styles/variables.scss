@@ -1,0 +1,25 @@
+$colors: (
+  orange: (
+    base: #ef9240,
+    dark: #e97713,
+    light: rgba(239, 146, 64, 0.5)
+  ),
+  red: #ef4068,
+  text: #2a2a2a,
+  pink: #ff7e9c,
+  gray: (
+    light: #cacaca
+  )
+);
+
+@function color($color-name, $variant: base) {
+  @if map-has-key($colors, $color-name) {
+    @if type-of(map-get($colors, $color-name)) == map {
+      @return map-get(map-get($colors, $color-name), $variant);
+    } @else {
+      @return map-get($colors, $color-name);
+    }
+  }
+  @warn "Color '#{$color-name}' not found in $colors map.";
+  @return null;
+}

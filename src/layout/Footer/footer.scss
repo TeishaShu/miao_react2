@@ -1,0 +1,43 @@
+// @use "./styles/variables";
+// @use "./../../styles/variables.scss" as vars;
+
+footer {
+  background: $orange;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  margin-top: 60px;
+
+  img {
+    max-width: 100px;
+    margin: 10px 0;
+  }
+
+  p {
+    margin-bottom: 10px;
+
+    a {
+      // color: vars.$red;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, .5);
+      padding: 0 5px;
+
+      &:hover {
+        // background: vars.$or_dark10;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width:768px) {
+  footer {
+    padding: 8px 15px;
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
